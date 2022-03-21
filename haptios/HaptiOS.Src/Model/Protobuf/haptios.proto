@@ -1,0 +1,161 @@
+syntax = "proto3";
+package HaptiOS;
+
+/** COMMON Objects **/
+message Empty {
+    int32 status = 1;
+}
+
+/** DRONES/QUADROCOPTERS **/
+message DroneId {
+    int32 number = 1;
+    string mac = 2;
+}
+
+message DroneIds {
+    repeated DroneId values = 1;
+}
+
+message ConnectResult {
+    bool connected = 1;
+}
+
+message Timeout {
+    int32 seconds = 1;
+}
+
+message ConnectParams {
+    int32 droneId = 1;
+    int32 numTries = 2;
+    int32 maxTilt = 3;
+}
+
+message DisconnectParams {
+    int32 droneId = 1;
+}
+
+message TakeOffParams {
+    int32 droneId = 1;
+    Timeout timeout = 2;
+}
+
+message LandParams {
+    int32 droneId = 1;
+    Timeout timeout = 2;
+}
+
+message DroneControl {
+
+    int32 droneId = 1;
+    int32 roll = 2;
+    int32 pitch = 3;
+    int32 yaw = 4;
+    int32 verticalMovement = 5;
+}
+
+/** BLIMP **/
+
+service BlimpControlling {
+    rpc GetBlimps(Empty) returns (BlimpList) {}
+
+    rpc GetBlimpInfo(BlimpIdentifier) returns (BlimpStatus) {}
+
+    rpc MoveBlimp(BlimpControl) returns (Empty) {}
+}
+
+service BlimpBroadcast {
+    rpc SendBlimps(BlimpList) returns (Empty) {}
+
+    rpc SendStatus(BlimpStatus) returns (Empty) {}
+}
+
+message BlimpIdentifier {
+    int32 number = 1;
+    string ip_address = 2;
+}
+
+message BlimpControl {
+
+    enum Mode {
+        MANUAL = 0;
+        MANUAL_ALT = 1;
+        YAW_STABILIZATION = 2;
+        YAW_STABILIZATION_ALT = 3;
+        MOTORS_OFF = 100;
+    }
+
+    BlimpIdentifier identifier = 1;
+    int32 throttle = 2;
+    int32 steering = 3;
+    int32 height = 4;
+    Mode mode = 5;
+}
+
+message BlimpStatus {
+    BlimpIdentifier identifier = 1;
+    float battery = 2;
+    float yaw_angle = 3;
+    float target_yaw_angle = 4;
+    float laser_height = 5;
+}
+
+message BlimpList {
+    repeated BlimpStatus blimps = 1;
+}
+
+/** UNITY **/
+
+service VirtualWorld {
+    rpc GetObjects(Empty) returns (GameObjectList) {}
+
+    rpc SendBlimpStatus(GameObjectBlimpStatus) returns (Empty) {}
+
+    rpc OnTakeOff(GameObject) returns (Empty) {}
+
+    rpc OnLand(GameObject) returns (Empty) {}
+}
+
+service RealWorld {
+
+    rpc Start(GameObject) returns (Empty) {}
+
+    rpc Stop(GameObject) returns (Empty) {}
+}
+
+message GameObject {
+
+    message Vector3 {
+        float X = 1;
+        float Y = 2;
+        float Z = 3;
+    }
+    
+    message Quaternion {
+        float X = 1;
+        float Y = 2;
+        float Z = 3;
+        float W = 4;
+    }
+
+    message Eulers {
+        float X = 1;
+        float Y = 2;
+        float Z = 3;
+    }
+
+    string id = 1;
+    Vector3 position = 2;
+    Quaternion rotation = 3;
+    Eulers eulers = 4;
+}
+
+message GameObjectList {
+
+    repeated GameObject objects = 1;
+}
+
+message GameObjectBlimpStatus {
+    
+    string gameObjectId = 1;
+    BlimpStatus blimpStatus = 2;
+}
