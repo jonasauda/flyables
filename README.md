@@ -1,6 +1,6 @@
 # Flyables: Haptic Input Devices for Virtual Reality using Quadcopters
 
-Jonas Auda, Leon Busse, Nils Verheyen, Sven Mayer and Stefan Schneegass
+Jonas Auda, Nils Verheyen, Sven Mayer and Stefan Schneegass
 
 ## Support
 
