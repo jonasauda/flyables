@@ -27,7 +27,7 @@ url = {https://doi.org/10.1145/3489849.3489855},
 doi = {10.1145/3489849.3489855},
 articleno = {40},
 numpages = {11},
-keywords = {Virtual Reality, Flyables, Quadcopter, Haptics, Toolkit., Drones},
+keywords = {Virtual Reality, Flyables, Quadcopter, Haptics, Toolkit, Drones},
 location = {Osaka, Japan},
 series = {VRST '21}
 }
