@@ -1,3 +1,39 @@
+# Flyables: Haptic Input Devices for Virtual Reality using Quadcopters
+
+Jonas Auda, Leon Busse, Nils Verheyen, Sven Mayer and Stefan Schneegass
+
+## Support
+
+If you have any questions, please do not hesitate to write us an email.
+
+## Contact
+jonas.auda@uni-due.de
+
+## Video
+
+https://www.youtube.com/watch?v=udBv0pOpJZM
+
+## Citation/BibTeX
+
+```
+@inproceedings{10.1145/3489849.3489855,
+author = {Auda, Jonas and Verheyen, Nils and Mayer, Sven and Schneegass, Stefan},
+title = {Flyables: Haptic Input Devices for Virtual Reality Using Quadcopters},
+year = {2021},
+isbn = {9781450390927},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3489849.3489855},
+doi = {10.1145/3489849.3489855},
+articleno = {40},
+numpages = {11},
+keywords = {Virtual Reality, Flyables, Quadcopter, Haptics, Toolkit., Drones},
+location = {Osaka, Japan},
+series = {VRST '21}
+}
+
+```
+
 # Instructions
 ## Setup Instructions:
 ### Raspberry Pi Setup:
