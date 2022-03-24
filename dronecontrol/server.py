@@ -1,6 +1,6 @@
 # coding: utf-8
 
-
+import os
 import argparse
 import logging
 import logging.config
@@ -121,7 +121,8 @@ if __name__ == "__main__":
         #controller.takeoff_method = TakeoffMethods[0]
 
         logging.info('Starting web application')
-        app.run(host="192.168.1.4", port=7373)
+        os.environ['FLASK_ENV'] = 'development'
+        app.run(host="0.0.0.0", port=7373)
     except KeyboardInterrupt as interrupt:
         controller.stop_flight()
         controller.disconnect()
