@@ -22,12 +22,12 @@
             }
           },
           "height": {
-            "kp": 0.05,
+            "kp": 0.01,
             "ki": 0,
-            "kd": 0.05,
+            "kd": 0.001,
             "windup.guard": 50,
-            "out.max": 15,
-            "out.min": -15,
+            "out.max": 30,
+            "out.min": -30,
             "sample.time.millis": 10
           },
           "pitch": {
@@ -35,8 +35,8 @@
             "ki": 0,
             "kd": 0.05,
             "windup.guard": 10,
-            "out.max": 15,
-            "out.min": -15,
+            "out.max": 30,
+            "out.min": -30,
             "sample.time.millis": 10,
             "max.start.angle.deg": 180,
             "min.start.angle.deg": -180
@@ -46,8 +46,8 @@
             "ki": 0,
             "kd": 0.05,
             "windup.guard": 10,
-            "out.max": 15,
-            "out.min": -15,
+            "out.max": 30,
+            "out.min": -30,
             "sample.time.millis": 10
           },
           "roll": {
@@ -55,8 +55,8 @@
             "ki": 0,
             "kd": 0.05,
             "windup.guard": 10,
-            "out.max": 15,
-            "out.min": -15,
+            "out.max": 30,
+            "out.min": -30,
             "sample.time.millis": 10,
             "max.start.angle.deg": 180,
             "min.start.angle.deg": -180
