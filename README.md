@@ -41,7 +41,10 @@ series = {VRST '21}
 2. Add a Bluetooth dongle
 3. Download the "dronecontrol" folder from git
 4. Make sure the server.py is executable
-5. Start it with `sudo $HOME/.virtualenvs/dronecontrol/bin/python server.py [HaptiOS-IP] [HaptiOS-Port (5000)]`
+5. In the dronecontrol directory: `/usr/bin/python3 -m venv .venv`
+6. Each shell session: `source ./.venv/bin/activate`
+7. To install Requirements: `pip3 install -r requirements.txt`
+8. Start each time with `sudo python3 server.py [HaptiOS-IP] [HaptiOS-Port (5000)]` after sourceing as in Step 6
 
 ### Drone Setup:
 1. Start the drone
